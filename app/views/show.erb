@@ -1,0 +1,20 @@
+<h1> <%= @meetup.name %> </h1>
+<h6> Created by: <%= @creator[:username] %> </h6>
+<br>
+<h2> Description: <%= @meetup.description %> </h2>
+<br>
+<h2> Location: <%= @meetup.location %> </h2>
+<br>
+<form action="/<%= @meetup.id %>" method="post">
+  <div class = "form">
+    <input type="submit" name="" id="" value="Join this meetup!" />
+  </div>
+</form>
+
+<br>
+<h4> Other users who have signed up: </h4>
+<ul>
+  <% @attending.each do |person| %>
+    <li> <%= person.user[:username] %></li>
+  <% end %>
+</ul>
